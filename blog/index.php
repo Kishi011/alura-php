@@ -1,7 +1,11 @@
 <?php 
+
+// require faz com que o programa exiga que o arquivo requerido esteja sendo acessado. Caso contrário ele não executa o programa.
+// diferentemento do include, que inclui as linhas de código dos arquivos no qual ele é chamado, e não interrompe a execução do programa.
+    require_once 'conexao.php';
     require_once 'Artigo.php';
 
-    $artigo = new Artigo();
+    $artigo = new Artigo($mysql);
     $artigos = $artigo->exibeTodos();
 ?>
 
